@@ -1,0 +1,19 @@
+{% extends './sidebar.html' %}
+
+{% block title%} Inicio {% endblock %}
+
+{% block body %}
+    <div class="camara">
+       <div id="cont_camera" class="div_camera">
+            <video id="video" playsinline autoplay="true"> </video>
+       </div>
+
+    </div>
+    <div class="boton">
+        <a href="">
+            <div class="action">Capturar</div>
+        </a>
+    </div>
+
+<script src="{{ url_for('static', filename='ejecucion.js') }}"></script>
+{% endblock %}
