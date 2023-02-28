@@ -5,14 +5,17 @@
 {% block body %}
     <div class="camara">
        <div id="cont_camera" class="div_camera">
-            <video id="video" playsinline autoplay="true"> </video>
+            <video id="video" playsinline autoplay="true"></video>
+       </div>
+       <div class="foto">
+            <canvas id="canvasElement" height="480" width="640"></canvas>
        </div>
 
     </div>
     <div class="boton">
-        <a href="">
-            <div class="action">Capturar</div>
-        </a>
+        <button id="takeSnapshot" class="action">
+            Capturar
+        </button>
     </div>
 
 <script src="{{ url_for('static', filename='ejecucion.js') }}"></script>

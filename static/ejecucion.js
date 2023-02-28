@@ -1,7 +1,24 @@
-navigator.mediaDevices.getUserMedia(({audio:false, video: true})).then((stream)=>{
-    console.log(stream)
+navigator.mediaDevices.getUserMedia(({audio:false, video: true}))
+    .then((stream)=>{
+        console.log(stream)
 
-    let video = document.getElementById('video')
+        let video = document.getElementById('video')
+        video.srcObject = stream
 
-    video.srcObject = stream
-}).catch((err)=>console.log('error al cargar imagen'))
+    }).catch((error)=>{
+        console.log(error);
+    })
+
+document.getElementById("takeSnapshot").addEventListener("click",()=>{
+    console.log("hola")
+    document.querySelector(".foto").style.display = "grid";
+    document.querySelector(".div_camera").style.display = "none";
+    takePicture();
+    
+})
+
+function takePicture() {
+    const canvas = document.getElementById("canvasElement");
+    let ctx = canvas.getContext('2d');
+    ctx.drawImage(video, 0, 0, video.videoWidth, video.videoHeight);
+}

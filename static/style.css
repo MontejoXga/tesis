@@ -3,7 +3,7 @@
     padding: 0;
 }   
 
-body{
+.contenedor{
     background: url('./img/fondo.jpg') no-repeat center top;
     background-position: center center;
     width: 100%;
@@ -20,12 +20,14 @@ div.titulo{
 }
 
 div.container{
+
     display: grid;
     grid-template-columns: 1fr 5fr ;
     grid-template-rows: 100%;
     margin: 20px 100px;
+    padding: auto;
     background-color:rgba(189, 189, 189 ,0.8);
-    height: 500px;
+    height: 100%;
 
 }
 .botones{
@@ -60,7 +62,7 @@ div.container{
     background: rgb(255, 176, 176, 0.5);
     display: grid;
     gap: 10px;
-    grid-template-columns: 3fr 1fr;
+    grid-template-columns: 5fr 1fr;
     margin: 10px;
     padding: 10px;
 }
@@ -74,23 +76,26 @@ div.camara{
 .boton{
     background: rgb(255, 51, 51 , 0.5);
     display: grid;
-    justify-content: center;
     align-items: center;
 }
-.boton a {
-    text-decoration: none;
-    color: white;
-}
-.action{
+
+button.action{
+    cursor: pointer;
     border-radius: 50%;
+    margin: 0 auto;
+    border-color: white;
+    border-style: solid;
     background: red;
-    width: 200px;
-    height: 200px;
+    width: 150px;
+    height: 150px;
     display: flex;
     justify-content: center;
     align-items: center;
-    text-decoration: none;
-    font-size: 50px;
+}
+.action p{
+    color: white;
+    font-size: 30px;
+    
 }
 div.div_camera{
     width: 90%;
@@ -103,5 +108,21 @@ video{
     display: grid;
     width: 100%;
     height: auto;
+    margin: 0 auto;
+    background-size: cover;
+}
+div.foto{
+    display: none;
+    width: 90%;
+    margin: 10px auto;
+    justify-content: center;
+    align-items: center;
+
+}
+canvas.canvasElement{
+    display: grid;
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
     background-size: cover;
 }
