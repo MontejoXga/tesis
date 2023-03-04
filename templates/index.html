@@ -3,20 +3,21 @@
 {% block title%} Inicio {% endblock %}
 
 {% block body %}
-    <div class="camara">
-       <div id="cont_camera" class="div_camera">
-            <video id="video" playsinline autoplay="true"></video>
-       </div>
-       <div class="foto">
-            <canvas id="canvasElement" height="480" width="640"></canvas>
-       </div>
+        <div class="camara">
+        <div id="cont_camera" class="div_camera">
+                <video id="video" playsinline autoplay="true"></video>
+        </div>
+        <div class="foto">
+                <canvas id="canvasElement" height="480" width="640"></canvas>
+        </div>
 
-    </div>
-    <div class="boton">
-        <button id="takeSnapshot" class="action">
-            Capturar
-        </button>
-    </div>
-
+        </div>
+        <div class="boton">
+            <button id="takeSnapshot" class="action">
+                Capturar
+            </button>
+        </div>
+        
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="{{ url_for('static', filename='ejecucion.js') }}"></script>
 {% endblock %}
