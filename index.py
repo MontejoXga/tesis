@@ -22,8 +22,8 @@ def disp_pic():
     image_b64 = request.data
     img_b64 = base64.b64encode(image_b64).decode('utf-8')
     img_b64 = 'data:image/jpeg;base64, ' + img_b64
-    return jsonify(name='input.jpg', image=str(img_b64))
-    
+    retorno = jsonify(name='input.jpg', image=str(img_b64))
+    return retorno
 
 @app.route('/informacion')
 def informacion():

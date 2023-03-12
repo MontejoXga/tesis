@@ -119,10 +119,3 @@ div.foto{
     align-items: center;
 
 }
-canvas.canvasElement{
-    display: grid;
-    width: 100%;
-    height: auto;
-    margin: 0 auto;
-    background-size: cover;
-}

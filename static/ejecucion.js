@@ -22,10 +22,13 @@ document.getElementById("takeSnapshot").addEventListener("click",()=>{
 function takePicture() {
     const canvas = document.getElementById("canvasElement");
     let ctx = canvas.getContext('2d');
+
     ctx.drawImage(video, 0, 0, video.videoWidth, video.videoHeight);
     var imgURL = canvas.toDataURL();
     console.log(imgURL);
     
+    var muestreo
+
     $.ajax({
       type: 'POST',
       url: SERVER_URL,
@@ -35,18 +38,20 @@ function takePicture() {
       processData: false,
       dataType: 'json',
       success: function(data){
-        if(data.success){
-          alert('imagen enviada');
-        }else{
-          alert('hubo un error en el envio');
-        }
+        alert('dato enviado correctamente');
+        console.log(data)
       },
       error: function(data){
         alert('error');
       }
-    }).done(function(){
-      
-      console.log("enviado");
+    }).done(function(data){
+      var feedsParent = canvas.parentNode;
+      feedsParent.removeChild(canvas);
+      feedsParent.insertAdjacentHTML("beforebegin", '<canvas>'+data+'</canvas>')
+      /* este codigo si corre */
+      muestreo = data['image'];
+      console.log('enviado'+muestreo);
+
   
     });
 
